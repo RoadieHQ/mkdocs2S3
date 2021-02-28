@@ -27,6 +27,7 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: 'eu-west-1'   # optional: defaults to us-east-1
         SOURCE_DIR: 'site'      # optional: defaults to entire repository
+        DEST_DIR: target directory to put files in
 ```
 
 The s3 command uses the raw AWS CLI so any args supported within the CLI can be passed through in the with statement above. If you are going to use the above example verbatim, be warned `--delete` **permanently deletes** files in the S3 bucket that are **not** present in the latest version of your build.
